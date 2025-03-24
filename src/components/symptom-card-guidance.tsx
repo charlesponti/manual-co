@@ -1,8 +1,6 @@
 import { type Symptom, TREATMENT_GUIDANCE } from "@/types/symptom";
 import React from "react";
-import { AppointmentButton } from "./appointment-button";
-import { HospitalFinderButton } from "./hospital-finder-button";
-import { Button } from "./ui/button";
+import { DiagnosisActionButton } from "./diagnosis-action-button";
 
 const GUIDANCE_MESSAGES = {
 	[TREATMENT_GUIDANCE.IMMEDIATE_CARE]: "Seek immediate medical attention",
@@ -24,25 +22,8 @@ export const SymptomCardGuidance = React.memo(function SymptomGuidance({
 			<h4 className="font-semibold mb-2">Recommended Action:</h4>
 			<p className="text-sm">{guidanceMessage}</p>
 			<div className="my-4 flex justify-end">
-				<DiagnosisAction guidance={guidance} />
+				<DiagnosisActionButton guidance={guidance} />
 			</div>
 		</div>
 	);
 });
-
-function DiagnosisAction({
-	guidance,
-}: {
-	guidance: Symptom["treatment_guidance"];
-}) {
-	switch (guidance) {
-		case TREATMENT_GUIDANCE.IMMEDIATE_CARE:
-			return <HospitalFinderButton />;
-		case TREATMENT_GUIDANCE.NONIMMEDIATE_CARE:
-			return <AppointmentButton />;
-		case TREATMENT_GUIDANCE.NO_CARE:
-			return <Button variant="outline">Monitor Symptoms</Button>;
-		default:
-			return null;
-	}
-}
