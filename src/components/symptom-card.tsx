@@ -29,12 +29,6 @@ function SymptomCard({
 	const [showAppointmentScheduler, setShowAppointmentScheduler] =
 		useState(false);
 
-	const getSeverityColor = (score: number) => {
-		if (score >= 7) return "bg-destructive text-destructive-foreground";
-		if (score >= 4) return "bg-amber-500 text-white";
-		return "bg-green-500 text-white";
-	};
-
 	const getGuidanceAction = (guidance: Symptom["treatment_guidance"]) => {
 		switch (guidance) {
 			case "immediate-care":
@@ -73,7 +67,12 @@ function SymptomCard({
 					<div className="flex items-center justify-between">
 						<span className="font-medium">Severity:</span>
 						<span
-							className={`px-3 py-1 text-sm rounded-full ${getSeverityColor(symptom.severity_score)}`}
+							className={cn("px-3 py-1 text-sm rounded-full text-white", {
+								"bg-destructive": symptom.severity_score >= 7,
+								"bg-amber-500":
+									symptom.severity_score >= 4 && symptom.severity_score < 7,
+								"bg-green-500": symptom.severity_score < 4,
+							})}
 						>
 							{symptom.severity_score}
 						</span>
