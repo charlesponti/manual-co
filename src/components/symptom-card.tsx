@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -9,10 +8,9 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import type { MatchedSymptom, Symptom } from "@/types/symptom";
-import { useState } from "react";
-import { AppointmentScheduler } from "./appointment-scheduler";
-import HospitalFinder from "./hospital-finder";
+import type { MatchedSymptom } from "@/types/symptom";
+import React from "react";
+import { SymptomCardGuidance } from "./symptom-card-guidance";
 
 type SymptomCardProps = {
 	className?: string;
@@ -25,34 +23,6 @@ function SymptomCard({
 	symptom,
 	isAlternative = false,
 }: SymptomCardProps) {
-	const [showHospitalFinder, setShowHospitalFinder] = useState(false);
-	const [showAppointmentScheduler, setShowAppointmentScheduler] =
-		useState(false);
-
-	const getGuidanceAction = (guidance: Symptom["treatment_guidance"]) => {
-		switch (guidance) {
-			case "immediate-care":
-				return (
-					<Button
-						variant="destructive"
-						onClick={() => setShowHospitalFinder(true)}
-					>
-						Find Immediate Care
-					</Button>
-				);
-			case "nonimmediate-care":
-				return (
-					<Button onClick={() => setShowAppointmentScheduler(true)}>
-						Schedule Appointment
-					</Button>
-				);
-			case "no-care":
-				return <Button variant="outline">Monitor Symptoms</Button>;
-			default:
-				return null;
-		}
-	};
-
 	return (
 		<>
 			<Card className={cn("min-w-sm max-w-sm flex flex-col", className)}>
@@ -80,15 +50,7 @@ function SymptomCard({
 
 					{/* Only show recommended action for non-alternative symptoms */}
 					{!isAlternative && (
-						<div className="border-t pt-4">
-							<h4 className="font-semibold mb-2">Recommended Action:</h4>
-							<p className="text-sm">
-								{getGuidanceMessage(symptom.treatment_guidance)}
-							</p>
-							<div className="my-4 flex justify-end">
-								{getGuidanceAction(symptom.treatment_guidance)}
-							</div>
-						</div>
+						<SymptomCardGuidance guidance={symptom.treatment_guidance} />
 					)}
 
 					{/* Only show articles for non-alternative symptoms */}
@@ -113,33 +75,8 @@ function SymptomCard({
 					)}
 				</CardContent>
 			</Card>
-
-			{/* Hospital finder component (will be shown when showHospitalFinder is true) */}
-			<HospitalFinder
-				isOpen={showHospitalFinder}
-				onClose={() => setShowHospitalFinder(false)}
-			/>
-
-			{/* Appointment scheduler component */}
-			<AppointmentScheduler
-				isOpen={showAppointmentScheduler}
-				onClose={() => setShowAppointmentScheduler(false)}
-			/>
 		</>
 	);
-}
-
-function getGuidanceMessage(guidance: Symptom["treatment_guidance"]) {
-	switch (guidance) {
-		case "immediate-care":
-			return "Seek immediate medical attention";
-		case "nonimmediate-care":
-			return "Schedule an appointment with your healthcare provider";
-		case "no-care":
-			return "Monitor symptoms and practice self-care";
-		default:
-			return "Consult with your healthcare provider";
-	}
 }
 
 export default SymptomCard;

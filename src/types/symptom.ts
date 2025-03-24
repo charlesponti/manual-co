@@ -1,9 +1,13 @@
 import { z } from "zod";
 
+export const TREATMENT_GUIDANCE = {
+	IMMEDIATE_CARE: "immediate-care",
+	NONIMMEDIATE_CARE: "nonimmediate-care",
+	NO_CARE: "no-care",
+} as const;
+
 export type TreatmentGuidance =
-	| "immediate-care"
-	| "nonimmediate-care"
-	| "no-care";
+	(typeof TREATMENT_GUIDANCE)[keyof typeof TREATMENT_GUIDANCE];
 
 export interface Symptom {
 	name: string;

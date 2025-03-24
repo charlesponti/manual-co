@@ -73,7 +73,6 @@ export default function Home() {
 						</div>
 					)}
 
-					{/* Add alternative symptoms section with fade-in effect */}
 					{data?.alternatives?.length && data.alternatives.length > 0 ? (
 						<div
 							className={`mt-8 w-full max-w-4xl transition-opacity duration-500 ease-in-out ${
