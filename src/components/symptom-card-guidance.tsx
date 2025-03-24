@@ -12,7 +12,11 @@ const GUIDANCE_MESSAGES = {
 
 export const SymptomCardGuidance = React.memo(function SymptomGuidance({
 	guidance,
-}: { guidance: Symptom["treatment_guidance"] }) {
+	symptom,
+}: {
+	guidance: Symptom["treatment_guidance"];
+	symptom: Symptom;
+}) {
 	// Determine the guidance message based on the treatment guidance
 	const guidanceMessage =
 		GUIDANCE_MESSAGES[guidance] || GUIDANCE_MESSAGES.default;
@@ -22,7 +26,7 @@ export const SymptomCardGuidance = React.memo(function SymptomGuidance({
 			<h4 className="font-semibold mb-2">Recommended Action:</h4>
 			<p className="text-sm">{guidanceMessage}</p>
 			<div className="my-4 flex justify-end">
-				<DiagnosisActionButton guidance={guidance} />
+				<DiagnosisActionButton guidance={guidance} symptom={symptom} />
 			</div>
 		</div>
 	);

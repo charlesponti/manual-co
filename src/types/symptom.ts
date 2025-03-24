@@ -20,6 +20,15 @@ export interface Symptom {
 	duration_range: [number, number];
 }
 
+export type PatientSymptom = Symptom & {
+	id: string;
+	painLevel?: number;
+	notes?: string;
+	createdAt: string;
+	updatedAt: string;
+	resolvedAt?: string;
+};
+
 export const SymptomRequestSchema = z.object({
 	symptom: z.string(),
 	intensity: z.number().optional(),

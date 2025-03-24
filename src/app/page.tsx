@@ -1,5 +1,6 @@
 "use client";
 
+import MonitoredSymptomsList from "@/components/monitored-symptoms-list";
 import SymptomCard from "@/components/symptom-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -41,7 +42,7 @@ export default function Home() {
 	);
 
 	return (
-		<div className="container mx-auto min-h-screen flex flex-col justify-center">
+		<div className="container mx-auto min-h-screen max-w-md flex flex-col justify-center">
 			<div className="flex flex-col items-center px-4">
 				<div className="flex flex-col items-center gap-2 my-8">
 					<h1 className="text-2xl md:text-4xl font-bold tracking-tight text-center fade-in-40 duration-500 ease-in-out">
@@ -130,6 +131,10 @@ export default function Home() {
 							</div>
 						</div>
 					) : null}
+				</div>
+
+				<div className="mt-16 w-full">
+					<MonitoredSymptomsList />
 				</div>
 			</div>
 

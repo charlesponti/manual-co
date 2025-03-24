@@ -25,7 +25,16 @@ function SymptomCard({
 }: SymptomCardProps) {
 	return (
 		<>
-			<Card className={cn("min-w-sm md:max-w-md flex flex-col", className)}>
+			<Card
+				className={cn(
+					"min-w-sm flex flex-col",
+					{
+						"md:max-w-sm": isAlternative,
+						"md:max-w-md": !isAlternative,
+					},
+					className,
+				)}
+			>
 				<CardHeader className="flex-1">
 					<CardTitle
 						data-testid="symptom-name"
@@ -54,7 +63,10 @@ function SymptomCard({
 
 					{/* Only show recommended action for non-alternative symptoms */}
 					{!isAlternative && (
-						<SymptomCardGuidance guidance={symptom.treatment_guidance} />
+						<SymptomCardGuidance
+							guidance={symptom.treatment_guidance}
+							symptom={symptom}
+						/>
 					)}
 
 					{/* Only show articles for non-alternative symptoms */}
