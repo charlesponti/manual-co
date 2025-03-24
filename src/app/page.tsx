@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useSymptom } from "@/hooks/use-symptom";
 import { cn } from "@/lib/utils";
+import { TREATMENT_GUIDANCE, type TreatmentGuidance } from "@/types/symptom";
 import { Label } from "@radix-ui/react-label";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function Home() {
 	const [symptom, setSymptom] = useState("");
@@ -27,10 +28,17 @@ export default function Home() {
 		}
 	}, [data]);
 
-	const handleSubmit = async (event: React.FormEvent) => {
-		event.preventDefault();
-		mutate({ symptom });
-	};
+	const handleSymptomSelect = useCallback((selectedSymptom: string) => {
+		setSymptom(selectedSymptom);
+	}, []);
+
+	const handleSubmit = useCallback(
+		async (event: React.FormEvent) => {
+			event.preventDefault();
+			mutate({ symptom });
+		},
+		[mutate, symptom],
+	);
 
 	return (
 		<div className="container mx-auto min-h-screen flex flex-col justify-center">
@@ -59,30 +67,23 @@ export default function Home() {
 					</div>
 					{!showResults || (showResults && symptom.length === 0) ? (
 						<div className="flex flex-col items-center">
-							<ul className="list-disc gap-1 grid grid-cols-3 h-6">
-								<button
-									type="button"
-									className="px-2 py-1 border-dotted border-2	rounded-md cursor-pointer border-green-200 text-sm"
-									onClick={() => setSymptom("Headache")}
-								>
-									Headache
-								</button>
-								<button
-									type="button"
-									className="px-2 py-1 border-dotted border-2	rounded-md cursor-pointer border-amber-200 text-sm"
-									onClick={() => setSymptom("Night sweats")}
-								>
-									Night sweats
-								</button>
-								<button
-									type="button"
-									className="px-2 py-1 border-dotted border-2	rounded-md cursor-pointer border-red-200 text-sm"
-									onClick={() => setSymptom("Severe chest pain")}
-								>
-									Severe chest pain
-								</button>
+							<ul className="list-disc gap-1 grid grid-cols-3">
+								<SampleSymptomButton
+									symptom="Headache"
+									severity={TREATMENT_GUIDANCE.NO_CARE}
+									onSelect={handleSymptomSelect}
+								/>
+								<SampleSymptomButton
+									symptom="Night sweats"
+									severity={TREATMENT_GUIDANCE.NONIMMEDIATE_CARE}
+									onSelect={handleSymptomSelect}
+								/>
+								<SampleSymptomButton
+									symptom="Severe chest pain"
+									severity={TREATMENT_GUIDANCE.IMMEDIATE_CARE}
+									onSelect={handleSymptomSelect}
+								/>
 							</ul>
-							{/* Additional content can be added here */}
 						</div>
 					) : null}
 					{error && (
@@ -136,5 +137,32 @@ export default function Home() {
 				<p className="text-sm text-muted-foreground">manual.co demo</p>
 			</footer>
 		</div>
+	);
+}
+
+function SampleSymptomButton({
+	onSelect,
+	symptom,
+	severity,
+}: {
+	onSelect: (symptom: string) => void;
+	severity: TreatmentGuidance;
+	symptom: string;
+}) {
+	return (
+		<button
+			type="button"
+			className={cn(
+				"px-2 py-1 border-dotted border-2 rounded-md cursor-pointer text-sm",
+				{
+					"border-green-200": severity === TREATMENT_GUIDANCE.NO_CARE,
+					"border-amber-200": severity === TREATMENT_GUIDANCE.NONIMMEDIATE_CARE,
+					"border-red-200": severity === TREATMENT_GUIDANCE.IMMEDIATE_CARE,
+				},
+			)}
+			onClick={() => onSelect(symptom)}
+		>
+			{symptom}
+		</button>
 	);
 }
