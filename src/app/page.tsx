@@ -4,6 +4,7 @@ import SymptomCard from "@/components/symptom-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useSymptom } from "@/hooks/use-symptom";
+import { cn } from "@/lib/utils";
 import { Label } from "@radix-ui/react-label";
 import { useEffect, useState } from "react";
 
@@ -67,9 +68,10 @@ export default function Home() {
 				<div className="flex flex-col items-center mt-8 max-w-full">
 					{data && (
 						<div
-							className={`transition-opacity duration-500 ease-in-out ${
-								showResults ? "opacity-100" : "opacity-0"
-							}`}
+							className={cn("transition-opacity duration-500 ease-in-out", {
+								"opacity-100": showResults,
+								"opacity-0": !showResults,
+							})}
 						>
 							<SymptomCard symptom={data} />
 						</div>
@@ -77,9 +79,13 @@ export default function Home() {
 
 					{data?.alternatives?.length && data.alternatives.length > 0 ? (
 						<div
-							className={`mt-8 w-full max-w-4xl transition-opacity duration-500 ease-in-out ${
-								showResults ? "opacity-100" : "opacity-0"
-							}`}
+							className={cn(
+								"mt-8 w-full max-w-4xl transition-opacity duration-500 ease-in-out",
+								{
+									"opacity-100": showResults,
+									"opacity-0": !showResults,
+								},
+							)}
 						>
 							<h2 className="text-md font-semibold mb-4 text-gray-400">
 								Alternative Matches
