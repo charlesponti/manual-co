@@ -10,8 +10,6 @@ const manrope = Manrope({
 	display: "swap",
 });
 
-// const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
 	title: "Ponti Studios - Symptom Guidance",
 	description: "symptom guidance",
