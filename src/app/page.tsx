@@ -57,7 +57,34 @@ export default function Home() {
 							{isPending ? "Checking..." : "Check"}
 						</Button>
 					</div>
-
+					{!showResults ? (
+						<div className="flex flex-col items-center">
+							<ul className="list-disc gap-1 grid grid-cols-3 h-6">
+								<button
+									type="button"
+									className="px-2 py-1 border-dotted border-2	rounded-md cursor-pointer border-green-200 text-sm"
+									onClick={() => setSymptom("Headache")}
+								>
+									Headache
+								</button>
+								<button
+									type="button"
+									className="px-2 py-1 border-dotted border-2	rounded-md cursor-pointer border-amber-200 text-sm"
+									onClick={() => setSymptom("Night sweats")}
+								>
+									Night sweats
+								</button>
+								<button
+									type="button"
+									className="px-2 py-1 border-dotted border-2	rounded-md cursor-pointer border-red-200 text-sm"
+									onClick={() => setSymptom("Severe chest pain")}
+								>
+									Severe chest pain
+								</button>
+							</ul>
+							{/* Additional content can be added here */}
+						</div>
+					) : null}
 					{error && (
 						<div className="bg-destructive/15 text-destructive p-3 rounded-md text-sm">
 							{error.message}
