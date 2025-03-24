@@ -4,6 +4,7 @@ import SymptomCard from "@/components/symptom-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useSymptom } from "@/hooks/use-symptom";
+import { Label } from "@radix-ui/react-label";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -37,13 +38,14 @@ export default function Home() {
 					<h1 className="text-2xl md:text-4xl font-bold tracking-tight text-center fade-in-40 duration-500 ease-in-out">
 						symptom guidance
 					</h1>
-					<p className="text-md text-muted-foreground text-center max-w-2xl">
-						What are you experiencing?
-					</p>
 				</div>
 				<form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
+					<Label htmlFor="symptom-input" className="text-gray-500">
+						What are you experiencing?
+					</Label>
 					<div className="flex w-full items-center space-x-2">
 						<Input
+							id="symptom-input"
 							type="text"
 							placeholder="Enter symptom"
 							value={symptom}
