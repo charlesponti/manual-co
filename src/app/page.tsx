@@ -57,7 +57,7 @@ export default function Home() {
 							{isPending ? "Checking..." : "Check"}
 						</Button>
 					</div>
-					{!showResults ? (
+					{!showResults || (showResults && symptom.length === 0) ? (
 						<div className="flex flex-col items-center">
 							<ul className="list-disc gap-1 grid grid-cols-3 h-6">
 								<button
