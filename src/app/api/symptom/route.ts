@@ -60,8 +60,6 @@ export async function POST(request: Request) {
 		fs.readFileSync(path.join(process.cwd(), "src/lib/symptoms.json"), "utf-8"),
 	);
 
-	console.log(`Loaded ${SYMPTOM_DATABASE.length} symptoms from the database.`);
-
 	try {
 		const body = SymptomRequestSchema.safeParse(await request.json());
 		if (!body.success) {
