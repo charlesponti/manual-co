@@ -5,7 +5,6 @@ import {
 	Card,
 	CardContent,
 	CardDescription,
-	CardFooter,
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
@@ -87,6 +86,9 @@ function SymptomCard({
 							<p className="text-sm">
 								{getGuidanceMessage(symptom.treatment_guidance)}
 							</p>
+							<div className="my-4 flex justify-end">
+								{getGuidanceAction(symptom.treatment_guidance)}
+							</div>
 						</div>
 					)}
 
@@ -94,23 +96,23 @@ function SymptomCard({
 					{!isAlternative && symptom.articles && (
 						<div className="border-t pt-4">
 							<h4 className="font-semibold mb-2">Further Reading:</h4>
-							<ul className="list-disc list-inside text-sm">
+							<ul className="list-inside text-sm space-y-3">
 								{symptom.articles.map((article) => (
 									<li key={crypto.getRandomValues(new Uint32Array(1))[0]}>
-										{article}
+										<a
+											href={article.url}
+											className="text-blue-600 underline underline-offset-3"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											{article.title}
+										</a>
 									</li>
 								))}
 							</ul>
 						</div>
 					)}
 				</CardContent>
-
-				{/* Only show action buttons for non-alternative symptoms */}
-				{!isAlternative && (
-					<CardFooter className="flex justify-end">
-						{getGuidanceAction(symptom.treatment_guidance)}
-					</CardFooter>
-				)}
 			</Card>
 
 			{/* Hospital finder component (will be shown when showHospitalFinder is true) */}

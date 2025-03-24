@@ -5,8 +5,14 @@
     "severity_score": 3,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing hot flashes",
-      "When to see a doctor"
+      {
+        "title": "Managing hot flashes",
+        "url": "/articles/managing-hot-flashes"
+      },
+      {
+        "title": "When to see a doctor",
+        "url": "/articles/when-to-see-a-doctor"
+      }
     ],
     "intensity_range": [
       2,
@@ -23,8 +29,14 @@
     "severity_score": 4,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Sleep hygiene tips",
-      "Managing night sweats"
+      {
+        "title": "Sleep hygiene tips",
+        "url": "/articles/sleep-hygiene-tips"
+      },
+      {
+        "title": "Managing night sweats",
+        "url": "/articles/managing-night-sweats"
+      }
     ],
     "intensity_range": [
       3,
@@ -41,8 +53,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Understanding irregular periods",
-      "What to do about irregular periods"
+      {
+        "title": "Understanding irregular periods",
+        "url": "/articles/understanding-irregular-periods"
+      },
+      {
+        "title": "What to do about irregular periods",
+        "url": "/articles/what-to-do-about-irregular-periods"
+      }
     ],
     "intensity_range": [
       1,
@@ -59,8 +77,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing menopause mood swings",
-      "Coping with menopausal irritability"
+      {
+        "title": "Managing menopause mood swings",
+        "url": "/articles/managing-menopause-mood-swings"
+      },
+      {
+        "title": "Coping with menopausal irritability",
+        "url": "/articles/coping-with-menopausal-irritability"
+      }
     ],
     "intensity_range": [
       1,
@@ -77,8 +101,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Coping with menopause mood swings",
-      "Managing emotional fluctuations"
+      {
+        "title": "Coping with menopause mood swings",
+        "url": "/articles/coping-with-menopause-mood-swings"
+      },
+      {
+        "title": "Managing emotional fluctuations",
+        "url": "/articles/managing-emotional-fluctuations"
+      }
     ],
     "intensity_range": [
       1,
@@ -95,8 +125,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing menopause fatigue",
-      "Boosting energy levels"
+      {
+        "title": "Managing menopause fatigue",
+        "url": "/articles/managing-menopause-fatigue"
+      },
+      {
+        "title": "Boosting energy levels",
+        "url": "/articles/boosting-energy-levels"
+      }
     ],
     "intensity_range": [
       1,
@@ -113,8 +149,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Improving sleep quality",
-      "Coping with insomnia"
+      {
+        "title": "Improving sleep quality",
+        "url": "/articles/improving-sleep-quality"
+      },
+      {
+        "title": "Coping with insomnia",
+        "url": "/articles/coping-with-insomnia"
+      }
     ],
     "intensity_range": [
       1,
@@ -131,8 +173,14 @@
     "severity_score": 3,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Recognizing signs of depression",
-      "Seeking help for depression"
+      {
+        "title": "Recognizing signs of depression",
+        "url": "/articles/recognizing-signs-of-depression"
+      },
+      {
+        "title": "Seeking help for depression",
+        "url": "/articles/seeking-help-for-depression"
+      }
     ],
     "intensity_range": [
       2,
@@ -149,8 +197,14 @@
     "severity_score": 3,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing menopause anxiety",
-      "Coping with stress"
+      {
+        "title": "Managing menopause anxiety",
+        "url": "/articles/managing-menopause-anxiety"
+      },
+      {
+        "title": "Coping with stress",
+        "url": "/articles/coping-with-stress"
+      }
     ],
     "intensity_range": [
       2,
@@ -167,8 +221,14 @@
     "severity_score": 3,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing menopause weight gain",
-      "Healthy eating tips"
+      {
+        "title": "Managing menopause weight gain",
+        "url": "/articles/managing-menopause-weight-gain"
+      },
+      {
+        "title": "Healthy eating tips",
+        "url": "/articles/healthy-eating-tips"
+      }
     ],
     "intensity_range": [
       2,
@@ -185,8 +245,14 @@
     "severity_score": 3,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing menopause joint pain",
-      "Relieving joint discomfort"
+      {
+        "title": "Managing menopause joint pain",
+        "url": "/articles/managing-menopause-joint-pain"
+      },
+      {
+        "title": "Relieving joint discomfort",
+        "url": "/articles/relieving-joint-discomfort"
+      }
     ],
     "intensity_range": [
       2,
@@ -203,8 +269,14 @@
     "severity_score": 3,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing menopause headaches",
-      "Pain relief options"
+      {
+        "title": "Managing menopause headaches",
+        "url": "/articles/managing-menopause-headaches"
+      },
+      {
+        "title": "Pain relief options",
+        "url": "/articles/pain-relief-options"
+      }
     ],
     "intensity_range": [
       2,
@@ -221,8 +293,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing urinary frequency",
-      "Healthy bladder habits"
+      {
+        "title": "Managing urinary frequency",
+        "url": "/articles/managing-urinary-frequency"
+      },
+      {
+        "title": "Healthy bladder habits",
+        "url": "/articles/healthy-bladder-habits"
+      }
     ],
     "intensity_range": [
       1,
@@ -239,8 +317,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing urinary urgency",
-      "Relieving frequent urges"
+      {
+        "title": "Managing urinary urgency",
+        "url": "/articles/managing-urinary-urgency"
+      },
+      {
+        "title": "Relieving frequent urges",
+        "url": "/articles/relieving-frequent-urges"
+      }
     ],
     "intensity_range": [
       1,
@@ -257,8 +341,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing urinary incontinence",
-      "Improving bladder control"
+      {
+        "title": "Managing urinary incontinence",
+        "url": "/articles/managing-urinary-incontinence"
+      },
+      {
+        "title": "Improving bladder control",
+        "url": "/articles/improving-bladder-control"
+      }
     ],
     "intensity_range": [
       1,
@@ -275,8 +365,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing menopause dry skin",
-      "Nourishing your skin"
+      {
+        "title": "Managing menopause dry skin",
+        "url": "/articles/managing-menopause-dry-skin"
+      },
+      {
+        "title": "Nourishing your skin",
+        "url": "/articles/nourishing-your-skin"
+      }
     ],
     "intensity_range": [
       1,
@@ -293,8 +389,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing menopause hair loss",
-      "Nourishing your hair"
+      {
+        "title": "Managing menopause hair loss",
+        "url": "/articles/managing-menopause-hair-loss"
+      },
+      {
+        "title": "Nourishing your hair",
+        "url": "/articles/nourishing-your-hair"
+      }
     ],
     "intensity_range": [
       1,
@@ -311,8 +413,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing menopause hair loss",
-      "Nourishing your hair"
+      {
+        "title": "Managing menopause hair loss",
+        "url": "/articles/managing-menopause-hair-loss"
+      },
+      {
+        "title": "Nourishing your hair",
+        "url": "/articles/nourishing-your-hair"
+      }
     ],
     "intensity_range": [
       1,
@@ -329,8 +437,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing vaginal dryness",
-      "Relieving discomfort"
+      {
+        "title": "Managing vaginal dryness",
+        "url": "/articles/managing-vaginal-dryness"
+      },
+      {
+        "title": "Relieving discomfort",
+        "url": "/articles/relieving-discomfort"
+      }
     ],
     "intensity_range": [
       1,
@@ -347,8 +461,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing vaginal itching",
-      "Relieving discomfort"
+      {
+        "title": "Managing vaginal itching",
+        "url": "/articles/managing-vaginal-itching"
+      },
+      {
+        "title": "Relieving discomfort",
+        "url": "/articles/relieving-discomfort"
+      }
     ],
     "intensity_range": [
       1,
@@ -365,8 +485,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing vaginal dryness",
-      "Relieving discomfort"
+      {
+        "title": "Managing vaginal dryness",
+        "url": "/articles/managing-vaginal-dryness"
+      },
+      {
+        "title": "Relieving discomfort",
+        "url": "/articles/relieving-discomfort"
+      }
     ],
     "intensity_range": [
       1,
@@ -383,8 +509,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing low sex drive",
-      "Boosting libido"
+      {
+        "title": "Managing low sex drive",
+        "url": "/articles/managing-low-sex-drive"
+      },
+      {
+        "title": "Boosting libido",
+        "url": "/articles/boosting-libido"
+      }
     ],
     "intensity_range": [
       1,
@@ -401,8 +533,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing memory lapses",
-      "Boosting brain health"
+      {
+        "title": "Managing memory lapses",
+        "url": "/articles/managing-memory-lapses"
+      },
+      {
+        "title": "Boosting brain health",
+        "url": "/articles/boosting-brain-health"
+      }
     ],
     "intensity_range": [
       1,
@@ -419,8 +557,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing palpitations",
-      "Heart health tips"
+      {
+        "title": "Managing palpitations",
+        "url": "/articles/managing-palpitations"
+      },
+      {
+        "title": "Heart health tips",
+        "url": "/articles/heart-health-tips"
+      }
     ],
     "intensity_range": [
       1,
@@ -437,8 +581,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing nausea",
-      "Relieving morning sickness"
+      {
+        "title": "Managing nausea",
+        "url": "/articles/managing-nausea"
+      },
+      {
+        "title": "Relieving morning sickness",
+        "url": "/articles/relieving-morning-sickness"
+      }
     ],
     "intensity_range": [
       1,
@@ -455,8 +605,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing digestive issues",
-      "Healthy gut practices"
+      {
+        "title": "Managing digestive issues",
+        "url": "/articles/managing-digestive-issues"
+      },
+      {
+        "title": "Healthy gut practices",
+        "url": "/articles/healthy-gut-practices"
+      }
     ],
     "intensity_range": [
       1,
@@ -473,8 +629,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing tingly extremities",
-      "Relieving discomfort"
+      {
+        "title": "Managing tingly extremities",
+        "url": "/articles/managing-tingly-extremities"
+      },
+      {
+        "title": "Relieving discomfort",
+        "url": "/articles/relieving-discomfort"
+      }
     ],
     "intensity_range": [
       1,
@@ -491,8 +653,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing fluid retention",
-      "Healthy lifestyle habits"
+      {
+        "title": "Managing fluid retention",
+        "url": "/articles/managing-fluid-retention"
+      },
+      {
+        "title": "Healthy lifestyle habits",
+        "url": "/articles/healthy-lifestyle-habits"
+      }
     ],
     "intensity_range": [
       1,
@@ -509,8 +677,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing loss of interest",
-      "Finding joy again"
+      {
+        "title": "Managing loss of interest",
+        "url": "/articles/managing-loss-of-interest"
+      },
+      {
+        "title": "Finding joy again",
+        "url": "/articles/finding-joy-again"
+      }
     ],
     "intensity_range": [
       1,
@@ -527,8 +701,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing dizziness",
-      "Improving balance and stability"
+      {
+        "title": "Managing dizziness",
+        "url": "/articles/managing-dizziness"
+      },
+      {
+        "title": "Improving balance and stability",
+        "url": "/articles/improving-balance-and-stability"
+      }
     ],
     "intensity_range": [
       1,
@@ -545,8 +725,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing loss of appetite",
-      "Healthy eating habits"
+      {
+        "title": "Managing loss of appetite",
+        "url": "/articles/managing-loss-of-appetite"
+      },
+      {
+        "title": "Healthy eating habits",
+        "url": "/articles/healthy-eating-habits"
+      }
     ],
     "intensity_range": [
       1,
@@ -563,8 +749,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing paleness",
-      "Improving circulation"
+      {
+        "title": "Managing paleness",
+        "url": "/articles/managing-paleness"
+      },
+      {
+        "title": "Improving circulation",
+        "url": "/articles/improving-circulation"
+      }
     ],
     "intensity_range": [
       1,
@@ -581,8 +773,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing concentration issues",
-      "Boosting brain health"
+      {
+        "title": "Managing concentration issues",
+        "url": "/articles/managing-concentration-issues"
+      },
+      {
+        "title": "Boosting brain health",
+        "url": "/articles/boosting-brain-health"
+      }
     ],
     "intensity_range": [
       1,
@@ -599,8 +797,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing menopause hair loss",
-      "Nourishing your hair"
+      {
+        "title": "Managing menopause hair loss",
+        "url": "/articles/managing-menopause-hair-loss"
+      },
+      {
+        "title": "Nourishing your hair",
+        "url": "/articles/nourishing-your-hair"
+      }
     ],
     "intensity_range": [
       1,
@@ -617,8 +821,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing paleness",
-      "Improving circulation"
+      {
+        "title": "Managing paleness",
+        "url": "/articles/managing-paleness"
+      },
+      {
+        "title": "Improving circulation",
+        "url": "/articles/improving-circulation"
+      }
     ],
     "intensity_range": [
       1,
@@ -635,8 +845,14 @@
     "severity_score": 2,
     "treatment_guidance": "nonimmediate-care",
     "articles": [
-      "Managing ankle and foot swelling",
-      "Healthy lifestyle habits"
+      {
+        "title": "Managing ankle and foot swelling",
+        "url": "/articles/managing-ankle-and-foot-swelling"
+      },
+      {
+        "title": "Healthy lifestyle habits",
+        "url": "/articles/healthy-lifestyle-habits"
+      }
     ],
     "intensity_range": [
       1,
@@ -653,8 +869,14 @@
     "severity_score": 9,
     "treatment_guidance": "immediate-care",
     "articles": [
-      "When to seek emergency care",
-      "Understanding chest pain"
+      {
+        "title": "When to seek emergency care",
+        "url": "/articles/when-to-seek-emergency-care"
+      },
+      {
+        "title": "Understanding chest pain",
+        "url": "/articles/understanding-chest-pain"
+      }
     ],
     "intensity_range": [
       7,
@@ -671,8 +893,14 @@
     "severity_score": 8,
     "treatment_guidance": "immediate-care",
     "articles": [
-      "Emergency signs during menopause",
-      "When to call your doctor"
+      {
+        "title": "Emergency signs during menopause",
+        "url": "/articles/emergency-signs-during-menopause"
+      },
+      {
+        "title": "When to call your doctor",
+        "url": "/articles/when-to-call-your-doctor"
+      }
     ],
     "intensity_range": [
       6,
@@ -689,8 +917,14 @@
     "severity_score": 9,
     "treatment_guidance": "immediate-care",
     "articles": [
-      "Breathing emergencies",
-      "Signs of serious conditions"
+      {
+        "title": "Breathing emergencies",
+        "url": "/articles/breathing-emergencies"
+      },
+      {
+        "title": "Signs of serious conditions",
+        "url": "/articles/signs-of-serious-conditions"
+      }
     ],
     "intensity_range": [
       7,
@@ -707,8 +941,14 @@
     "severity_score": 8,
     "treatment_guidance": "immediate-care",
     "articles": [
-      "Neurological warning signs",
-      "Emergency headache symptoms"
+      {
+        "title": "Neurological warning signs",
+        "url": "/articles/neurological-warning-signs"
+      },
+      {
+        "title": "Emergency headache symptoms",
+        "url": "/articles/emergency-headache-symptoms"
+      }
     ],
     "intensity_range": [
       6,
@@ -725,8 +965,14 @@
     "severity_score": 9,
     "treatment_guidance": "immediate-care",
     "articles": [
-      "Stroke warning signs",
-      "When to call 911"
+      {
+        "title": "Stroke warning signs",
+        "url": "/articles/stroke-warning-signs"
+      },
+      {
+        "title": "When to call 911",
+        "url": "/articles/when-to-call-911"
+      }
     ],
     "intensity_range": [
       7,
