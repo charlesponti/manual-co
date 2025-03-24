@@ -25,7 +25,7 @@ function SymptomCard({
 }: SymptomCardProps) {
 	return (
 		<>
-			<Card className={cn("min-w-sm max-w-sm flex flex-col", className)}>
+			<Card className={cn("min-w-sm md:max-w-md flex flex-col", className)}>
 				<CardHeader className="flex-1">
 					<CardTitle
 						data-testid="symptom-name"
