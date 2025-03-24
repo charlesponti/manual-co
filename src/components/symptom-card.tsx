@@ -27,7 +27,10 @@ function SymptomCard({
 		<>
 			<Card className={cn("min-w-sm max-w-sm flex flex-col", className)}>
 				<CardHeader className="flex-1">
-					<CardTitle className="capitalize flex items-center justify-between">
+					<CardTitle
+						data-testid="symptom-name"
+						className="capitalize flex items-center justify-between"
+					>
 						<p>{symptom.name}</p>
 					</CardTitle>
 					<CardDescription>{symptom.description}</CardDescription>
