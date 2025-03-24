@@ -4,25 +4,20 @@ import { AppointmentButton } from "./appointment-button";
 import { HospitalFinderButton } from "./hospital-finder-button";
 import { Button } from "./ui/button";
 
+const GUIDANCE_MESSAGES = {
+	[TREATMENT_GUIDANCE.IMMEDIATE_CARE]: "Seek immediate medical attention",
+	[TREATMENT_GUIDANCE.NONIMMEDIATE_CARE]:
+		"Schedule an appointment with your healthcare provider",
+	[TREATMENT_GUIDANCE.NO_CARE]: "Monitor symptoms and practice self-care",
+	default: "Consult with your healthcare provider",
+};
+
 export const SymptomCardGuidance = React.memo(function SymptomGuidance({
 	guidance,
 }: { guidance: Symptom["treatment_guidance"] }) {
-	let guidanceMessage: string;
-
 	// Determine the guidance message based on the treatment guidance
-	switch (guidance) {
-		case TREATMENT_GUIDANCE.IMMEDIATE_CARE:
-			guidanceMessage = "Seek immediate medical attention";
-			break;
-		case TREATMENT_GUIDANCE.NONIMMEDIATE_CARE:
-			guidanceMessage = "Schedule an appointment with your healthcare provider";
-			break;
-		case TREATMENT_GUIDANCE.NO_CARE:
-			guidanceMessage = "Monitor symptoms and practice self-care";
-			break;
-		default:
-			guidanceMessage = "Consult with your healthcare provider";
-	}
+	const guidanceMessage =
+		GUIDANCE_MESSAGES[guidance] || GUIDANCE_MESSAGES.default;
 
 	return (
 		<div className="border-t pt-4">
