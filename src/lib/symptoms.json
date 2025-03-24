@@ -3,7 +3,7 @@
     "name": "hot flashes",
     "description": "Sudden feeling of warmth in the upper body",
     "severity_score": 3,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing hot flashes",
@@ -51,7 +51,7 @@
     "name": "irregular periods",
     "description": "Unpredictable menstrual cycle and varying flow of periods",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Understanding irregular periods",
@@ -75,7 +75,7 @@
     "name": "irritable mood",
     "description": "Fluctuations in mood and irritability",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing menopause mood swings",
@@ -99,7 +99,7 @@
     "name": "mood swings",
     "description": "Sudden changes in mood and emotions",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Coping with menopause mood swings",
@@ -123,7 +123,7 @@
     "name": "fatigue",
     "description": "Persistent feeling of tiredness and exhaustion",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing menopause fatigue",
@@ -147,7 +147,7 @@
     "name": "sleep disturbances",
     "description": "Difficulty falling asleep or staying asleep",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Improving sleep quality",
@@ -171,7 +171,7 @@
     "name": "depression",
     "description": "Persistent feeling of sadness and loss of interest in activities",
     "severity_score": 3,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Recognizing signs of depression",
@@ -195,7 +195,7 @@
     "name": "anxiety",
     "description": "Feelings of fear and nervousness without a clear cause",
     "severity_score": 3,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing menopause anxiety",
@@ -219,7 +219,7 @@
     "name": "weight gain",
     "description": "Unintended weight increase and difficulty losing it",
     "severity_score": 3,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing menopause weight gain",
@@ -243,7 +243,7 @@
     "name": "joint pain",
     "description": "Pain and discomfort in joints without any apparent injury or inflammation",
     "severity_score": 3,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing menopause joint pain",
@@ -267,7 +267,7 @@
     "name": "headaches",
     "description": "Recurrent or frequent headaches without an apparent cause",
     "severity_score": 3,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing menopause headaches",
@@ -291,7 +291,7 @@
     "name": "urinary frequency",
     "description": "Increased need to urinate more often than usual",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing urinary frequency",
@@ -315,7 +315,7 @@
     "name": "urinary urgency",
     "description": "Strong and sudden urge to urinate without much warning",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing urinary urgency",
@@ -339,7 +339,7 @@
     "name": "urinary incontinence",
     "description": "Involuntary leakage of urine",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing urinary incontinence",
@@ -363,7 +363,7 @@
     "name": "dry skin",
     "description": "Skin that feels dry and lacks elasticity or suppleness",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing menopause dry skin",
@@ -387,7 +387,7 @@
     "name": "thinning hair",
     "description": "Hair that becomes finer or falls out more easily than usual",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing menopause hair loss",
@@ -411,7 +411,7 @@
     "name": "hair thinning and loss",
     "description": "Hair that becomes thinner and more easily lost",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing menopause hair loss",
@@ -435,7 +435,7 @@
     "name": "burning sensation in vagina",
     "description": "A burning or discomfort feeling inside the vagina without any apparent injury or infection",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing vaginal dryness",
@@ -459,7 +459,7 @@
     "name": "itchy vagina",
     "description": "An itchy feeling inside the vagina without any apparent infection or injury",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing vaginal itching",
@@ -483,7 +483,7 @@
     "name": "vaginal dryness",
     "description": "Decreased lubrication and decreased elasticity of the vagina",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing vaginal dryness",
@@ -507,7 +507,7 @@
     "name": "low sex drive",
     "description": "Decreased interest or desire for sexual activity",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing low sex drive",
@@ -531,7 +531,7 @@
     "name": "memory lapses and forgetfulness",
     "description": "Difficulty remembering things or concentrating on tasks",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing memory lapses",
@@ -555,7 +555,7 @@
     "name": "palpitations",
     "description": "Irregular or rapid heartbeats without any apparent cause",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing palpitations",
@@ -579,7 +579,7 @@
     "name": "nausea and vomiting",
     "description": "Feelings of nausea or actual vomiting without any apparent cause",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing nausea",
@@ -603,7 +603,7 @@
     "name": "constipation or diarrhea",
     "description": "Changes in bowel habits to more frequent loose stools or constipation",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing digestive issues",
@@ -627,7 +627,7 @@
     "name": "tingling sensations",
     "description": "Numbness or tingling in the hands, feet, or other parts of the body without any apparent cause",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing tingly extremities",
@@ -651,7 +651,7 @@
     "name": "fluid retention",
     "description": "Increased swelling or puffiness in the hands, feet, face, or ankles",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing fluid retention",
@@ -675,7 +675,7 @@
     "name": "loss of interest in activities",
     "description": "Decreased enjoyment and motivation for usual activities",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing loss of interest",
@@ -699,7 +699,7 @@
     "name": "dizziness or lightheadedness",
     "description": "Feeling faint or dizzy without any apparent cause",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing dizziness",
@@ -723,7 +723,7 @@
     "name": "loss of appetite or overeating",
     "description": "Loss of interest in food or eating more than usual without any apparent cause",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing loss of appetite",
@@ -747,7 +747,7 @@
     "name": "paleness or pallor",
     "description": "Sallow or pale appearance due to decreased blood flow or oxygenation",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing paleness",
@@ -771,7 +771,7 @@
     "name": "difficulty concentrating",
     "description": "Difficulty focusing on tasks or remembering things",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing concentration issues",
@@ -795,7 +795,7 @@
     "name": "hair thinning and loss",
     "description": "Hair that becomes thinner and more easily lost",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing menopause hair loss",
@@ -819,7 +819,7 @@
     "name": "paleness or pallor",
     "description": "Sallow or pale appearance due to decreased blood flow or oxygenation",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing paleness",
@@ -843,7 +843,7 @@
     "name": "swelling in ankles or feet",
     "description": "Increased swelling or puffiness in the ankles or feet",
     "severity_score": 2,
-    "treatment_guidance": "nonimmediate-care",
+    "treatment_guidance": "no-care",
     "articles": [
       {
         "title": "Managing ankle and foot swelling",

@@ -40,6 +40,7 @@ function SymptomCard({
 					<div className="flex items-center justify-between">
 						<span className="font-medium">Severity:</span>
 						<span
+							data-testid="symptom-severity"
 							className={cn("px-3 py-1 text-sm rounded-full text-white", {
 								"bg-destructive": symptom.severity_score >= 7,
 								"bg-amber-500":
