@@ -3,6 +3,11 @@ import { NextResponse } from "next/server";
 import fs from "node:fs";
 import path from "node:path";
 
+// Determine if a score is within a given range
+function isWithinRange(score: number, range: number[]) {
+	return score >= range[0] && score <= range[range.length - 1];
+}
+
 // Calculate match score for a symptom based on name, intensity, and duration
 function calculateMatchScore(
 	dbSymptom: Symptom,
@@ -21,10 +26,7 @@ function calculateMatchScore(
 	// Add intensity match score if provided
 	if (query.intensity !== undefined) {
 		// Check if intensity is within range
-		if (
-			query.intensity >= dbSymptom.intensity_range[0] &&
-			query.intensity <= dbSymptom.intensity_range[1]
-		) {
+		if (isWithinRange(query.intensity, dbSymptom.intensity_range)) {
 			// More points for intensity in the middle of the range
 			const rangeMidpoint =
 				(dbSymptom.intensity_range[0] + dbSymptom.intensity_range[1]) / 2;
@@ -38,10 +40,7 @@ function calculateMatchScore(
 	// Add duration match score if provided
 	if (query.duration !== undefined) {
 		// Check if duration is within range
-		if (
-			query.duration >= dbSymptom.duration_range[0] &&
-			query.duration <= dbSymptom.duration_range[1]
-		) {
+		if (isWithinRange(query.duration, dbSymptom.duration_range)) {
 			// More points for duration in the middle of the range
 			const rangeMidpoint =
 				(dbSymptom.duration_range[0] + dbSymptom.duration_range[1]) / 2;
@@ -76,9 +75,9 @@ export async function POST(request: Request) {
 			);
 		}
 
-		// Score all symptoms and find the best matches
 		const scoredSymptoms = SYMPTOM_DATABASE.map((dbSymptom) => ({
 			...dbSymptom,
+			// Calculate a score based on name, intensity and duration match
 			score: calculateMatchScore(dbSymptom, { symptom, intensity, duration }),
 		}))
 			.filter((item) => item.score > 0) // Only include matches with some relevance
