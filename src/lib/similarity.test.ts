@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { isWithinRange } from "./similarity";
+import { getRangeMidpoint, isWithinRange } from "./similarity";
 
 describe("similarity utils", () => {
 	describe("isWithinRange", () => {
@@ -15,6 +15,17 @@ describe("similarity utils", () => {
 		test("should handle undefined score", () => {
 			// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 			expect(isWithinRange(undefined as any, [0, 10])).toBe(false);
+		});
+	});
+	describe("getRangeMidpoint", () => {
+		test("returns the midpoint of the range", () => {
+			expect(getRangeMidpoint([0, 10])).toBe(5);
+		});
+		test("returns the midpoint of the range with negative numbers", () => {
+			expect(getRangeMidpoint([-10, 10])).toBe(0);
+		});
+		test("returns the midpoint of the range with decimal numbers", () => {
+			expect(getRangeMidpoint([0.5, 1.5])).toBe(1);
 		});
 	});
 });
