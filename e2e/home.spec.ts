@@ -1,4 +1,4 @@
-import { clickEnabledButton } from "@/test.utils";
+import { clickEnabledButton, fillSymptomInput } from "@/test.utils";
 import { expect, test } from "@playwright/test";
 
 test.describe("Home page", () => {
@@ -23,12 +23,7 @@ test.describe("Home page", () => {
 
 	test("should display error when no matches found", async ({ page }) => {
 		await page.goto("/");
-
-		// Enter a nonsense symptom that won't match anything
-		await page
-			.locator('input[placeholder="Enter symptom"]')
-			.fill("xyznonexistentsymptom");
-
+		await fillSymptomInput(page, "xyznonexistentsymptom");
 		await clickEnabledButton(page);
 
 		// Wait for the error message
@@ -40,10 +35,7 @@ test.describe("Home page", () => {
 
 	test("should search for a symptom and display results", async ({ page }) => {
 		await page.goto("/");
-
-		// Enter a symptom that should exist in the database
-		await page.locator('input[placeholder="Enter symptom"]').fill("headache");
-
+		await fillSymptomInput(page, "headache");
 		await clickEnabledButton(page);
 
 		// Check if the symptom card appears
@@ -67,11 +59,7 @@ test.describe("Home page", () => {
 
 	test("should disable form during API request", async ({ page }) => {
 		await page.goto("/");
-
-		// Fill in the symptom
-		await page.locator('input[placeholder="Enter symptom"]').fill("headache");
-
-		// Click the submit button
+		await fillSymptomInput(page, "headache");
 		await clickEnabledButton(page);
 
 		// The button should show "Checking..." and be disabled during the request

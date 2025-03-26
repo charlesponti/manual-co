@@ -4,15 +4,22 @@ import MonitoredSymptomsList from "@/components/monitored-symptoms-list";
 import SymptomCard from "@/components/symptom-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useSymptom } from "@/hooks/use-symptom";
+import { useSymptomForm } from "@/hooks/use-symptom-form";
 import { cn } from "@/lib/utils";
 import { TREATMENT_GUIDANCE, type TreatmentGuidance } from "@/types/symptom";
 import { Label } from "@radix-ui/react-label";
 import { useCallback, useEffect, useState } from "react";
 
 export default function Home() {
-	const [symptom, setSymptom] = useState("");
-	const { mutate, data, error, isPending } = useSymptom();
+	const {
+		symptom,
+		setSymptom,
+		handleSubmit,
+		isDisabled,
+		isPending,
+		data,
+		error,
+	} = useSymptomForm();
 	const [showResults, setShowResults] = useState(false);
 
 	// Reset the animation state when data changes
@@ -29,16 +36,11 @@ export default function Home() {
 		}
 	}, [data]);
 
-	const handleSymptomSelect = useCallback((selectedSymptom: string) => {
-		setSymptom(selectedSymptom);
-	}, []);
-
-	const handleSubmit = useCallback(
-		async (event: React.FormEvent) => {
-			event.preventDefault();
-			mutate({ symptom });
+	const handleSymptomSelect = useCallback(
+		(selectedSymptom: string) => {
+			setSymptom(selectedSymptom);
 		},
-		[mutate, symptom],
+		[setSymptom],
 	);
 
 	return (
@@ -61,10 +63,11 @@ export default function Home() {
 							value={symptom}
 							onChange={(e) => setSymptom(e.target.value)}
 							disabled={isPending}
+							data-testid="symptom-input"
 						/>
 						<Button
 							type="submit"
-							disabled={isPending || !symptom}
+							disabled={isDisabled}
 							data-testid="symptom-submit-button"
 						>
 							{isPending ? "Checking..." : "Check"}

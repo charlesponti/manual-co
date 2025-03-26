@@ -1,20 +1,11 @@
-import { clickEnabledButton } from "@/test.utils";
+import { clickEnabledButton, fillSymptomInput } from "@/test.utils";
 import { expect, test } from "@playwright/test";
 
 test.describe("SymptomCard component", () => {
 	// Test for a high severity symptom
 	test("should display a high severity symptom correctly", async ({ page }) => {
 		await page.goto("/");
-
-		const input = page.locator('input[placeholder="Enter symptom"]');
-		const submitButton = page.locator('button[type="submit"]');
-
-		// First check button is disabled
-		await expect(submitButton).toBeDisabled();
-
-		// Fill input and wait for button to be enabled
-		await input.fill("chest pain");
-
+		await fillSymptomInput(page, "chest pain");
 		await clickEnabledButton(page);
 
 		// Wait for card to appear
@@ -52,16 +43,7 @@ test.describe("SymptomCard component", () => {
 		page,
 	}) => {
 		await page.goto("/");
-
-		const input = page.locator('input[placeholder="Enter symptom"]');
-		const submitButton = page.locator('button[type="submit"]');
-
-		// First check button is disabled
-		await expect(submitButton).toBeDisabled();
-
-		// Fill input and wait for button to be enabled
-		await input.fill("night sweats");
-
+		await fillSymptomInput(page, "night sweats");
 		await clickEnabledButton(page);
 
 		// Wait for card to appear
@@ -88,16 +70,7 @@ test.describe("SymptomCard component", () => {
 	// Test for a low severity symptom
 	test("should display a low severity symptom correctly", async ({ page }) => {
 		await page.goto("/");
-
-		const input = page.locator('input[placeholder="Enter symptom"]');
-		const submitButton = page.locator('button[type="submit"]');
-
-		// First check button is disabled
-		await expect(submitButton).toBeDisabled();
-
-		// Fill input and wait for button to be enabled
-		await input.fill("irregular periods");
-
+		await fillSymptomInput(page, "irregular periods");
 		await clickEnabledButton(page);
 
 		// Wait for card to appear
@@ -126,16 +99,7 @@ test.describe("SymptomCard component", () => {
 	// Test for alternative symptoms
 	test("should display alternative symptoms correctly", async ({ page }) => {
 		await page.goto("/");
-
-		const input = page.locator('input[placeholder="Enter symptom"]');
-		const submitButton = page.locator('button[type="submit"]');
-
-		// First check button is disabled
-		await expect(submitButton).toBeDisabled();
-
-		// Fill input and wait for button to be enabled
-		await input.fill("headache");
-
+		await fillSymptomInput(page, "headache");
 		await clickEnabledButton(page);
 
 		// Wait for the main result
