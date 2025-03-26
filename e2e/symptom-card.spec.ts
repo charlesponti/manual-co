@@ -7,6 +7,8 @@ test.describe("SymptomCard component", () => {
 
 		// Search for a severe symptom
 		await page.locator('input[placeholder="Enter symptom"]').fill("chest pain");
+
+		await page.locator('button[type="submit"]').isEnabled();
 		await page.locator('button[type="submit"]').click();
 
 		// Wait for card to appear
@@ -49,6 +51,8 @@ test.describe("SymptomCard component", () => {
 		await page
 			.locator('input[placeholder="Enter symptom"]')
 			.fill("night sweats");
+
+		await page.locator('button[type="submit"]').isEnabled();
 		await page.locator('button[type="submit"]').click();
 
 		// Wait for card to appear
@@ -80,6 +84,8 @@ test.describe("SymptomCard component", () => {
 		await page
 			.locator('input[placeholder="Enter symptom"]')
 			.fill("irregular periods");
+
+		await page.locator('button[type="submit"]').isEnabled();
 		await page.locator('button[type="submit"]').click();
 
 		// Wait for card to appear
@@ -111,6 +117,8 @@ test.describe("SymptomCard component", () => {
 
 		// Search for a symptom that should have alternatives
 		await page.locator('input[placeholder="Enter symptom"]').fill("headache");
+
+		await page.locator('button[type="submit"]').isEnabled();
 		await page.locator('button[type="submit"]').click();
 
 		// Wait for the main result

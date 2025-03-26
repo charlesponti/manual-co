@@ -27,6 +27,8 @@ test.describe("Home page", () => {
 		await page
 			.locator('input[placeholder="Enter symptom"]')
 			.fill("xyznonexistentsymptom");
+
+		await page.locator('button[type="submit"]').isEnabled();
 		await page.locator('button[type="submit"]').click();
 
 		// Wait for the error message
@@ -41,6 +43,8 @@ test.describe("Home page", () => {
 
 		// Enter a symptom that should exist in the database
 		await page.locator('input[placeholder="Enter symptom"]').fill("headache");
+
+		await page.locator('button[type="submit"]').isEnabled();
 		await page.locator('button[type="submit"]').click();
 
 		// Check if the symptom card appears
@@ -69,6 +73,7 @@ test.describe("Home page", () => {
 		await page.locator('input[placeholder="Enter symptom"]').fill("headache");
 
 		// Click the submit button
+		await page.locator('button[type="submit"]').isEnabled();
 		await page.locator('button[type="submit"]').click();
 
 		// The button should show "Checking..." and be disabled during the request
