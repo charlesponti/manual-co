@@ -1,5 +1,9 @@
 import { describe, expect, test } from "vitest";
-import { getRangeMidpoint, isWithinRange } from "./similarity";
+import {
+	getRangeMidpoint,
+	getScoreFromRange,
+	isWithinRange,
+} from "./similarity";
 
 describe("similarity utils", () => {
 	describe("isWithinRange", () => {
@@ -26,6 +30,33 @@ describe("similarity utils", () => {
 		});
 		test("returns the midpoint of the range with decimal numbers", () => {
 			expect(getRangeMidpoint([0.5, 1.5])).toBe(1);
+		});
+	});
+	describe("getScoreFromRange", () => {
+		test("returns 0 if query is undefined", () => {
+			expect(getScoreFromRange([0, 10], undefined)).toBe(0);
+		});
+		test("returns 0 if query is null", () => {
+			// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+			expect(getScoreFromRange([0, 10], null as any)).toBe(0);
+		});
+		test("returns 0 if query is 0", () => {
+			expect(getScoreFromRange([0, 10], 0)).toBe(0);
+		});
+		test("returns 0 if query is outside range", () => {
+			expect(getScoreFromRange([0, 10], 15)).toBe(0);
+		});
+		test("returns correct score for query within range", () => {
+			expect(getScoreFromRange([0, 10], 5)).toBe(25);
+		});
+		test("returns correct score for query within range with base score", () => {
+			expect(getScoreFromRange([0, 10], 6, 100)).toBe(80);
+		});
+		test("returns correct score for query at range midpoint", () => {
+			expect(getScoreFromRange([0, 10], 0)).toBe(0);
+		});
+		test("returns correct score for query at range midpoint with custom base score", () => {
+			expect(getScoreFromRange([0, 10], 0, 50)).toBe(0);
 		});
 	});
 });
