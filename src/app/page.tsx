@@ -63,7 +63,7 @@ export default function Home() {
 							disabled={isPending}
 						/>
 						<Button type="submit" disabled={isPending || !symptom}>
-							{isPending ? "Checking..." : "Check"}
+							{isPending ? "Checking..." : `Check ${symptom}`}
 						</Button>
 					</div>
 					{!showResults || (showResults && symptom.length === 0) ? (
