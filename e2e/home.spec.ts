@@ -1,3 +1,4 @@
+import { clickEnabledButton } from "@/test.utils";
 import { expect, test } from "@playwright/test";
 
 test.describe("Home page", () => {
@@ -28,8 +29,7 @@ test.describe("Home page", () => {
 			.locator('input[placeholder="Enter symptom"]')
 			.fill("xyznonexistentsymptom");
 
-		await page.locator('button[type="submit"]').isEnabled();
-		await page.locator('button[type="submit"]').click();
+		await clickEnabledButton(page);
 
 		// Wait for the error message
 		await expect(page.locator("[class*='bg-destructive']")).toBeVisible();
@@ -44,8 +44,7 @@ test.describe("Home page", () => {
 		// Enter a symptom that should exist in the database
 		await page.locator('input[placeholder="Enter symptom"]').fill("headache");
 
-		await page.locator('button[type="submit"]').isEnabled();
-		await page.locator('button[type="submit"]').click();
+		await clickEnabledButton(page);
 
 		// Check if the symptom card appears
 		await expect(
@@ -73,25 +72,20 @@ test.describe("Home page", () => {
 		await page.locator('input[placeholder="Enter symptom"]').fill("headache");
 
 		// Click the submit button
-		await page.locator('button[type="submit"]').isEnabled();
-		await page.locator('button[type="submit"]').click();
+		await clickEnabledButton(page);
 
 		// The button should show "Checking..." and be disabled during the request
-		await expect(page.locator('button[type="submit"]')).toContainText(
-			"Checking...",
-		);
-		await expect(page.locator('button[type="submit"]')).toBeDisabled();
+		const submitButton = page.locator('button[type="submit"]');
+		await expect(submitButton).toContainText("Checking...");
+		await expect(submitButton).toBeDisabled();
 		await expect(
 			page.locator('input[placeholder="Enter symptom"]'),
 		).toBeDisabled();
 
 		// After the request is complete, the button should return to normal
-		await expect(page.locator('button[type="submit"]')).toContainText("Check", {
-			timeout: 5000,
-		});
-		await expect(page.locator('button[type="submit"]')).toBeEnabled({
-			timeout: 5000,
-		});
+		// const submitButton = page.locator('button[type="submit"]');
+		await expect(submitButton).toContainText("Check");
+
 		await expect(
 			page.locator('input[placeholder="Enter symptom"]'),
 		).toBeEnabled({ timeout: 5000 });

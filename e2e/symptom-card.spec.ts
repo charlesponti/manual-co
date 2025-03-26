@@ -1,3 +1,4 @@
+import { clickEnabledButton } from "@/test.utils";
 import { expect, test } from "@playwright/test";
 
 test.describe("SymptomCard component", () => {
@@ -5,11 +6,16 @@ test.describe("SymptomCard component", () => {
 	test("should display a high severity symptom correctly", async ({ page }) => {
 		await page.goto("/");
 
-		// Search for a severe symptom
-		await page.locator('input[placeholder="Enter symptom"]').fill("chest pain");
+		const input = page.locator('input[placeholder="Enter symptom"]');
+		const submitButton = page.locator('button[type="submit"]');
 
-		await page.locator('button[type="submit"]').isEnabled();
-		await page.locator('button[type="submit"]').click();
+		// First check button is disabled
+		await expect(submitButton).toBeDisabled();
+
+		// Fill input and wait for button to be enabled
+		await input.fill("chest pain");
+
+		await clickEnabledButton(page);
 
 		// Wait for card to appear
 		await expect(page.locator('[data-testid="symptom-name"]')).toBeVisible({
@@ -47,13 +53,16 @@ test.describe("SymptomCard component", () => {
 	}) => {
 		await page.goto("/");
 
-		// Search for a medium severity symptom
-		await page
-			.locator('input[placeholder="Enter symptom"]')
-			.fill("night sweats");
+		const input = page.locator('input[placeholder="Enter symptom"]');
+		const submitButton = page.locator('button[type="submit"]');
 
-		await page.locator('button[type="submit"]').isEnabled();
-		await page.locator('button[type="submit"]').click();
+		// First check button is disabled
+		await expect(submitButton).toBeDisabled();
+
+		// Fill input and wait for button to be enabled
+		await input.fill("night sweats");
+
+		await clickEnabledButton(page);
 
 		// Wait for card to appear
 		await expect(page.locator('[data-testid="symptom-name"]')).toBeVisible({
@@ -80,13 +89,16 @@ test.describe("SymptomCard component", () => {
 	test("should display a low severity symptom correctly", async ({ page }) => {
 		await page.goto("/");
 
-		// Search for a low severity symptom
-		await page
-			.locator('input[placeholder="Enter symptom"]')
-			.fill("irregular periods");
+		const input = page.locator('input[placeholder="Enter symptom"]');
+		const submitButton = page.locator('button[type="submit"]');
 
-		await page.locator('button[type="submit"]').isEnabled();
-		await page.locator('button[type="submit"]').click();
+		// First check button is disabled
+		await expect(submitButton).toBeDisabled();
+
+		// Fill input and wait for button to be enabled
+		await input.fill("irregular periods");
+
+		await clickEnabledButton(page);
 
 		// Wait for card to appear
 		await expect(page.locator('[data-testid="symptom-name"]')).toBeVisible({
@@ -115,11 +127,16 @@ test.describe("SymptomCard component", () => {
 	test("should display alternative symptoms correctly", async ({ page }) => {
 		await page.goto("/");
 
-		// Search for a symptom that should have alternatives
-		await page.locator('input[placeholder="Enter symptom"]').fill("headache");
+		const input = page.locator('input[placeholder="Enter symptom"]');
+		const submitButton = page.locator('button[type="submit"]');
 
-		await page.locator('button[type="submit"]').isEnabled();
-		await page.locator('button[type="submit"]').click();
+		// First check button is disabled
+		await expect(submitButton).toBeDisabled();
+
+		// Fill input and wait for button to be enabled
+		await input.fill("headache");
+
+		await clickEnabledButton(page);
 
 		// Wait for the main result
 		const mainDiagnosis = page.locator('[data-testid="symptom-name"]').first();
