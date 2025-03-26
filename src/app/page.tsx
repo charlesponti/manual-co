@@ -62,7 +62,11 @@ export default function Home() {
 							onChange={(e) => setSymptom(e.target.value)}
 							disabled={isPending}
 						/>
-						<Button type="submit" disabled={isPending || !symptom}>
+						<Button
+							type="submit"
+							disabled={isPending || !symptom}
+							data-testid="symptom-submit-button"
+						>
 							{isPending ? "Checking..." : "Check"}
 						</Button>
 					</div>
