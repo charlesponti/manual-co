@@ -1,58 +1,17 @@
+import { calculateMatchScore } from "@/lib/similarity";
 import { SymptomRequestSchema, type Symptom } from "@/types/symptom";
 import { NextResponse } from "next/server";
 import fs from "node:fs";
 import path from "node:path";
 
-// Determine if a score is within a given range
-function isWithinRange(score: number, range: number[]) {
-	return score >= range[0] && score <= range[range.length - 1];
-}
-
-// Calculate match score for a symptom based on name, intensity, and duration
-function calculateMatchScore(
-	dbSymptom: Symptom,
-	query: { symptom: string; intensity?: number; duration?: number },
-): number {
-	let score = 0;
-
-	// Name match gives highest score
-	if (dbSymptom.name.toLowerCase().includes(query.symptom.toLowerCase())) {
-		score += 100;
-		if (dbSymptom.name.toLowerCase() === query.symptom.toLowerCase()) {
-			score += 50; // Exact match bonus
-		}
-	}
-
-	// Add intensity match score if provided
-	if (query.intensity !== undefined) {
-		// Check if intensity is within range
-		if (isWithinRange(query.intensity, dbSymptom.intensity_range)) {
-			// More points for intensity in the middle of the range
-			const rangeMidpoint =
-				(dbSymptom.intensity_range[0] + dbSymptom.intensity_range[1]) / 2;
-			const distance = Math.abs(query.intensity - rangeMidpoint);
-			const maxDistance =
-				(dbSymptom.intensity_range[1] - dbSymptom.intensity_range[0]) / 2;
-			score += 25 * (1 - distance / maxDistance);
-		}
-	}
-
-	// Add duration match score if provided
-	if (query.duration !== undefined) {
-		// Check if duration is within range
-		if (isWithinRange(query.duration, dbSymptom.duration_range)) {
-			// More points for duration in the middle of the range
-			const rangeMidpoint =
-				(dbSymptom.duration_range[0] + dbSymptom.duration_range[1]) / 2;
-			const distance = Math.abs(query.duration - rangeMidpoint);
-			const maxDistance =
-				(dbSymptom.duration_range[1] - dbSymptom.duration_range[0]) / 2;
-			score += 25 * (1 - distance / maxDistance);
-		}
-	}
-
-	return score;
-}
+/**
+ * ## Potential improvements:
+ * 1. Caching: Implement caching for the symptom database to avoid reading from the data source on every request.
+ * 2. Pagination: Implement pagination for the response to handle large datasets.
+ * 3. Rate limiting: Implement rate limiting to prevent abuse of the API.
+ * 4. Logging: Add logging for better monitoring and debugging.
+ * 5. Error handling: Improve error handling to provide more specific error messages.
+ */
 
 export async function POST(request: Request) {
 	const SYMPTOM_DATABASE: Symptom[] = JSON.parse(
